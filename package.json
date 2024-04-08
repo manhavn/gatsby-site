@@ -1,0 +1,46 @@
+{
+  "name": "gatsby-site",
+  "version": "0.0.1",
+  "private": true,
+  "description": "gatsby-site",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "project-init": "sh project-init.sh",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged",
+    "prettier": "prettier -w ."
+  },
+  "dependencies": {
+    "gatsby": "^5.13.3",
+    "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-sass": "^6.13.1",
+    "gatsby-plugin-sharp": "^5.13.1",
+    "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-transformer-sharp": "^5.13.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.74.1"
+  },
+  "devDependencies": {
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "{**/*,*}.{js,ts,jsx,tsx,css,scss,sass,html,htm,json,md,vue,cjs,astro}": [
+      "npm run prettier"
+    ]
+  }
+}
